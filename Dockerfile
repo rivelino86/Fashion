@@ -6,8 +6,8 @@
 
 FROM httpd:latest
 
-COPY . /usr/local/apache2/htdocs/html/
+COPY . /index.html /usr/local/apache2/htdocs/
 
 EXPOSE 80
 
-CMD ["httpd-foregroung"]
+#CMD ["httpd-foregroung"]
