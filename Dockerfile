@@ -6,6 +6,6 @@
 
 FROM httpd:latest
 
-COPY . /var/www/index.html/
+COPY . /var/www/html/
 
 EXPOSE 80
