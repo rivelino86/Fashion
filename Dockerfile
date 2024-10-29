@@ -6,6 +6,6 @@
 
 FROM httpd:latest
 
-COPY . /usr/local/apache2#/index.thml/
+COPY . /var/www/index.html/
 
 EXPOSE 80
