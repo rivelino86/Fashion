@@ -9,7 +9,7 @@ pipeline {
         stage(""){
             steps{
                  echo "Scanning Docker image with Trivy"
-                sh "trivy image --format table -o docker_image_scan_report_fashion-app.html "
+                sh "trivy image --format table -o docker_image_scan_report_fashion-app:2.04.html "
             }
         }
         stage("Build image") {
