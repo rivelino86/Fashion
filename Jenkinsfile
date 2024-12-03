@@ -3,8 +3,13 @@ pipeline {
     stages {
         stage("Sonar scan"){
             steps{
+                script{
                  echo '********* Sonar is ready to scan********'
-            }
+                 sh withSonarQubeEnv(credentialsId: 'Sonar_cred') {
+                // some block
+             }
+          }
+         }
         }
         stage("scan file by trivy"){
             steps{
