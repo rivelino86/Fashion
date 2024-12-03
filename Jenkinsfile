@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage("scan file byb trivy"){
+            steps{
+                  sh "trivy fs --format table -o clinicapp-scan-report.html ."
+            }
+        }
         stage("Build image") {
             steps {
                 script {
