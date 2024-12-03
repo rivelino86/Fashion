@@ -6,7 +6,7 @@ pipeline {
                   sh "trivy fs --format table -o fashionapp-scan-report.html ."
             }
         }
-        stage(""){
+        stage("Trivy scan the docker image"){
             steps{
                  echo "Scanning Docker image with Trivy"
                 sh "trivy image --severity HIGH,CRITICAL fashion-app:2.0.4"
