@@ -11,7 +11,7 @@ pipeline {
                   withSonarQubeEnv(credentialsId: 'Sonar_cred') {
                    echo "********* ${SONAR_SCANNER}********"
 
-             sh '''
+              sh '''
                    ${SONAR_SCANNER}/bin/sonar-scanner \
                   -Dsonar.projectKey=fashion_app \
                   -Dsonar.projectName=fashion_app \
