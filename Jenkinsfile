@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage("scan file byb trivy"){
             steps{
-                  sh "trivy fs --format table -o clinicapp-scan-report.html ."
+                  sh "trivy fs --format table -o fashionapp-scan-report.html ."
+            }
+        }
+        stage(""){
+            steps{
+                 echo "Scanning Docker image with Trivy"
+                sh "trivy image --format table -o docker_image_scan_report_fashion-app.html "
             }
         }
         stage("Build image") {
