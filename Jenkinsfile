@@ -12,10 +12,10 @@ pipeline {
                    echo '********* ${SONAR_SCANNER}********'
 
              sh '''
-                   ${SONAR_SCANNER}/bin/sonar-scanner
-                  -Dsonar.projectKey=fashion_app
-                  -Dsonar.projectName=fashion_app
-                  -Dsonar.sources=.
+                   ${SONAR_SCANNER}/bin/sonar-scanner \
+                  -Dsonar.projectKey=fashion_app \
+                  -Dsonar.projectName=fashion_app \
+                  -Dsonar.sources=. \
                   -Dsonar.java.binaries=.
                   '''
                }
