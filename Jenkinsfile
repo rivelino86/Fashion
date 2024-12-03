@@ -9,8 +9,9 @@ pipeline {
                 script{
                 
                   withSonarQubeEnv(credentialsId: 'Sonar_cred') {
-                   echo '*********echo ${SONAR_SCANNER}********'
-                  sh '''
+                   echo '********* ${SONAR_SCANNER}********'
+
+             sh '''
                    ${SONAR_SCANNER}/bin/sonar-scanner
                   -Dsonar.projectKey=fashion_app
                   -Dsonar.projectName=fashion_app
