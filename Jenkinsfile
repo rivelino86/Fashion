@@ -9,7 +9,8 @@ pipeline {
         stage(""){
             steps{
                  echo "Scanning Docker image with Trivy"
-                sh "trivy image --format table -o docker_image_scan_report_fashion-app:2.04.html "
+                sh "trivy image --severity HIGH,CRITICAL fashion-app:2.0.4"
+ 
             }
         }
         stage("Build image") {
