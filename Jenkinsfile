@@ -9,6 +9,7 @@ pipeline {
                 script{
                 
                   withSonarQubeEnv(credentialsId: 'Sonar_cred') {
+
                    echo "********* ${SONAR_SCANNER}********"
 
               sh '''
