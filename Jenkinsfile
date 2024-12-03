@@ -1,7 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage("scan file byb trivy"){
+        stage("Sonar scan"){
+            steps{
+                 echo '********* Sonar is ready to scan********'
+            }
+        }
+        stage("scan file by trivy"){
             steps{
                   sh "trivy fs --format table -o fashionapp-scan-report.html ."
             }
