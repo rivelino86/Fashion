@@ -11,6 +11,9 @@ pipeline {
                   withSonarQubeEnv(credentialsId: 'Sonar_cred') {
                    echo '*********echo ${SONAR_SCANNER}********'
                   sh '${SONAR_SCANNER}/bin/sonar-scanner'
+                  sh '-Dsonar.projectKey=fashion_app'
+                  sh '-Dsonar.sources= .'
+                  sh '-Dsonar.java.binaries=.'
                }
             }
          }
