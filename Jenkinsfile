@@ -1,13 +1,16 @@
 pipeline {
     agent any
+    environment{
+        SONAR_SCANNER = tool 'sonar'
+    }
     stages {
         stage("Sonar scanner"){
             steps{
                 script{
                 
                   withSonarQubeEnv(credentialsId: 'Sonar_cred') {
-                   echo '********* Sonar is ready to scan********'
-                // some block
+                   echo '*********echo ${SONAR_SCANNER}********'
+                  sh '${SONAR_SCANNER}/bin/sonar-scanner'
                }
             }
          }
