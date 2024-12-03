@@ -1,16 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage("Sonar scan"){
+        stage("Sonar scanner"){
             steps{
                 script{
-                 echo '********* Sonar is ready to scan********'
-                 sh withSonarQubeEnv(credentialsId: 'Sonar_cred') {
+                
+                  withSonarQubeEnv(credentialsId: 'Sonar_cred') {
+                   echo '********* Sonar is ready to scan********'
                 // some block
-             }
-          }
+               }
+            }
          }
-        }
+     }
         stage("scan file by trivy"){
             steps{
                   sh "trivy fs --format table -o fashionapp-scan-report.html ."
